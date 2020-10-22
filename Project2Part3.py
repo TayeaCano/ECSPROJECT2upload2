@@ -4,7 +4,11 @@
 from random import *
 listA1 = [0]
 listA2 = [0]
+
+#iterates 1 million times
 for i in range(1000000):
+
+    #Assign our costs and locations to variables
     LA1 = 6
     LA2 = 2
     CA1 = 4
@@ -33,6 +37,7 @@ for i in range(1000000):
     scoreB2 = (10 - distanceToB2) + 3 * (6 - CB2)
 
     #calculate wich A Cafe has a higher score(one of these will always be higher than either B cafe)
+    #adds a 2 to list if condition is true(profit will be 2 for both because we charge $4)
     if scoreA1 >= scoreA2:
         listA1.append(2)
     else:
@@ -41,8 +46,11 @@ for i in range(1000000):
     #optional code to show table for each customer(uncomment line below:)
     # print("Customer Location:", customerLocation, "Score A1:", scoreA1, "Score A2:", scoreA2, "Score B1:", scoreB1, "Score B2:", scoreB2)
 
+#calculates our profit by compiling all the items in our list and getting the sum
 profitA1 = sum(listA1)
 profitA2 = sum(listA2)
+
+
 print("Expected profit at A1 per customer:", profitA1/1000000)
 print("Total profit at A1:", profitA1)
 print("Expected profit A2 per customer:", profitA2/1000000)
